@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DotNetLead.DragDrop.UI.View.CandidateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:b="clr-namespace:DotNetLead.DragDrop.UI.Behavior">
+    <StackPanel>
+        <Border BorderThickness="2" BorderBrush="Orange">
+            <StackPanel>
+                <TextBlock Text="Candidates" Foreground="SeaGreen" FontSize="18" FontFamily="Arial" FontWeight="Bold" />
+                <ListBox ItemsSource="{Binding List}" BorderBrush="White">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding ImagePath}" MaxHeight="22" MaxWidth="22"/>
+                                <TextBlock VerticalAlignment="Center">            
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" {0} {1}">
+                                            <Binding Path="FirstName"/>
+                                            <Binding Path="LastName"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <i:Interaction.Behaviors>
+                                    <b:FrameworkElementDragBehavior/>
+                                </i:Interaction.Behaviors>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <i:Interaction.Behaviors>
+                        <b:ListBoxDropBehavior/>
+                    </i:Interaction.Behaviors>
+                </ListBox>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>

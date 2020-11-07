@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="DotNetLead.DragDrop.UI.View.DetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:v="clr-namespace:DotNetLead.DragDrop.UI.View"
+             MaxWidth="600">
+    <StackPanel>
+        <Button Template="{StaticResource ctpDetailButton}"/>
+    </StackPanel>
+</UserControl>

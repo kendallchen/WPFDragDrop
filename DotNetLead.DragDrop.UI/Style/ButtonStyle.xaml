@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:DotNetLead.DragDrop.UI.View"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:b="clr-namespace:DotNetLead.DragDrop.UI.Behavior">
+
+    <ControlTemplate x:Key="ctpDetailButton" TargetType="Button">
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <Image Source="{Binding ImagePath}" MaxHeight="33" MaxWidth="33"/>
+                <TextBlock FontSize="15" Margin="2" >            
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat=" {0} {1}">
+                            <Binding Path="FirstName"/>
+                            <Binding Path="LastName"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <i:Interaction.Behaviors>
+                    <b:FrameworkElementDragBehavior/>
+                    <b:FrameworkElementDropBehavior/>
+                </i:Interaction.Behaviors>
+            </StackPanel>
+            <v:NestedView/>
+        </StackPanel>
+    </ControlTemplate>
+    
+</ResourceDictionary>
